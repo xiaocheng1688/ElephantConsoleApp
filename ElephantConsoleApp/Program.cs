@@ -12,7 +12,7 @@ internal class Program
         while (true)
         {
             // add 4 to swap two variables directly but it is dangerous
-            Console.WriteLine("Press 1 for Lloyd, 2 for Lucinda, 3 to swap, 4 is dangerous");
+            Console.WriteLine("Press 1 for Lloyd, 2 for Lucinda, 3 to swap, 4 is dangerous, 5 is for talking to each other");
             string? line = Console.ReadLine();
             if (int.TryParse(line, out int choice))
             {
@@ -54,9 +54,15 @@ internal class Program
 
                     lloyd.WhoAmI();
                 }
+                else if (choice == 5)
+                {
+                    // you can understand this statement from Elephant.cs
+                    // There are comments on the method of SpeakTo and HearMessage.
+                    lucinda.SpeakTo(lloyd, "Hi, Lloyd! How are you doing?");
+                }
                 else
                 {
-                    Console.WriteLine("Please enter an integer among 1, 2, 3, 4");                    
+                    Console.WriteLine("Please enter an integer among 1, 2, 3, 4, 5");                    
                 }
             }
             else
